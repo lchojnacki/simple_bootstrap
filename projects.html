@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+    <title>AboutPython | Przykładowe skrypty</title>
+    <link rel=icon href=./img/favicon.svg sizes="any" type="image/svg+xml">
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <style>
+        body {
+            position: relative;
+        }
+        .container {
+            padding-top: 80px;
+            padding-bottom: 100px;
+        }
+        .panel-footer {
+            width: 100%;
+            margin-top: 50px;
+            position:absolute;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#code1").click(function() {
+                $("#code1div").html("<div class=\"alert alert-success alert-dismissible\" role=\"alert\">Super, potrafisz sortować liczby!</div>")
+            });
+
+            $("#code2").click(function() {
+                $("#code2div").html("<div class=\"alert alert-success alert-dismissible\" role=\"alert\">Super, potrafisz sprawdzić, czy liczba jest pierwsza!</div>")
+            });
+
+            $("#code3").click(function() {
+                $("#code3div").html("<div class=\"alert alert-success alert-dismissible\" role=\"alert\">Super, potrafisz usuwać samogłoski z tekstu!</div>")
+            });
+
+            $("#code4").click(function() {
+                $("#code4div").html("<div class=\"alert alert-success alert-dismissible\" role=\"alert\">Super, potrafisz wypisać tekst od tyłu!</div>")
+            });
+
+            $("#code5").click(function() {
+                $("#code5div").html("<div class=\"alert alert-success alert-dismissible\" role=\"alert\">Super, potrafisz wypisywać liczby parzyste z listy!</div>")
+            });
+        });
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="./">AboutPython</a>
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Dlaczego Python?</a></li>
+                        <li><a href="history.html">Historia języka</a></li>
+                        <li class="active"><a href="projects.html">Przykładowe skrypty</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Więcej<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="jquery.html">JQuery</a></li>
+                                <li><a href="ajax.html">AJAX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--
+        1. Dlaczego python? (porównanie python vs C/C++)
+        2. Historia języka
+        3. Przykładowe skrypty
+    -->
+
+    <div class="container">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="./">Home</a></li>
+                <li class="active">Przykładowe skrypty</li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title">Sortowanie bąbelkowe</h3></div>
+                    <div class="panel-body">
+                        <div id="code1div"></div>
+                        <pre>
+def bubbleSort(alist):
+    for passnum in range(len(alist)-1,0,-1):
+        for i in range(passnum):
+            if alist[i]>alist[i+1]:
+                temp = alist[i]
+                alist[i] = alist[i+1]
+                alist[i+1] = temp
+                    
+alist = [54,26,93,17,77,31,44,55,20]
+bubbleSort(alist)
+print(alist)</pre>
+                    <button id="code1" class="btn btn-info">Sprawdziłem ten kod</button></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title">Sprawdzanie, czy liczba jest pierwsza</h3></div>
+                    <div class="panel-body">
+                        <div id="code2div"></div>
+                        <pre>
+while True:
+    liczba = int(input("Podaj liczbę: "))
+    if liczba > 2:
+        i = 2
+        while i * i &lt;= liczba:
+            if liczba%i == 0:
+                print("Nie jest pierwsza")
+                break
+            i += 1
+        else:
+            print("Jest pierwsza")</pre>
+                    <button id="code2" class="btn btn-info">Sprawdziłem ten kod</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title">Usuwanie samogłosek z tekstu</h3></div>
+                    <div class="panel-body">
+                        <div id="code3div"></div>
+                        <pre>
+samogloski = "aąeęioóuy"
+tekst = input("Podaj tekst: ")
+
+nowy_tekst = ''
+
+for litera in tekst:
+    if litera.lower() in samogloski:
+        continue
+    else:
+        nowy_tekst += litera
+
+print(nowy_tekst)</pre>
+                    <button id="code3" class="btn btn-info">Sprawdziłem ten kod</button></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title">Wypisywanie tekstu od tyłu</h3></div>
+                    <div class="panel-body">
+                        <div id="code4div"></div>
+                        <pre>
+tekst = input("Podaj tekst: ")
+print(tekst[::-1])</pre>
+                    <button id="code4" class="btn btn-info">Sprawdziłem ten kod</button></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title">Wypisywanie liczb parzystych z listy</h3></div>
+                    <div class="panel-body">
+                        <div id="code5div"></div>
+                        <pre>
+num_list = [3, 4, 5, 6, 7, 8, 12, 14, 15, 13]
+print([x for x in num_list if x%2 == 0])</pre>
+                    <button id="code5" class="btn btn-info">Sprawdziłem ten kod</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="text-center panel-footer">© 2018 Copyright Łukasz Chojnacki</div>
+          
+    </footer>
+
+</body>

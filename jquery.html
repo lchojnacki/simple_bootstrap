@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+    <title>AboutPython | jQuery</title>
+    <link rel=icon href=./img/favicon.svg sizes="any" type="image/svg+xml">
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <style>
+        body {
+            position: relative;
+        }
+        .container {
+            padding-top: 80px;
+            padding-bottom: 100px;
+        }
+        .panel-footer {
+            width: 100%;
+            position:absolute;
+            bottom: 0;
+        }
+    </style>
+
+    <script>
+        function calculate_volume() {
+            var radius = $("#radius").val();
+            var height = $("#height").val();
+
+            var volume = 3.14 * radius * radius * height;
+            var total_surface = (3.14 * radius * radius * 2) + (2 * 3.14 * radius * height);
+
+            $("#volume").text("Objętość walca wynosi: " + volume);
+            $("#total_surface").text("Pole całkowite walca wynosi: " + total_surface);
+
+            $("#alert_s").html("<div class=\"alert alert-success alert-dismissible\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Gratulcje!</div>");
+
+        }
+
+        $(document).ready(function() {
+            $("#count_button").click(function() {
+                calculate_volume();
+            });
+
+            $("#radius").change(function() {
+				$("#radius_value").text("Promień podstawy: " + $(this).val());
+			});
+
+            $("#height").change(function() {
+				$("#height_value").text("Wysokość walca: " + $(this).val());
+			});
+        });
+
+        
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="./">AboutPython</a>
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Dlaczego Python?</a></li>
+                        <li><a href="history.html">Historia języka</a></li>
+                        <li><a href="projects.html">Przykładowe skrypty</a></li>
+                        <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Więcej<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="jquery.html">JQuery</a></li>
+                                <li><a href="ajax.html">AJAX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--
+        1. Dlaczego python? (porównanie python vs C/C++)
+        2. Historia języka
+        3. Przykładowe skrypty
+    -->
+
+    <div class="container">
+        <div class="row" id = "alert_s">
+            
+        </div>
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="./">Home</a></li>
+                <li class="active">jQuery</li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1>Walec & JavaScript</h1>
+                    <p>Na tej stronie możesz policzyć objętość i pole całkowite walca. Nie musisz odświeżać strony, wszystko robi za Ciebie technologia JavaScript!</p>
+                    <table style="width: 100%;">
+                        <tr style="width: 100%;"><td style="width: 40%"><p><label for = "radius">Wprowadź promień podstawy walca: </label></p></td><td><input type = "range" class="form-control" id = "radius" min="1" max="100"></td></tr>
+                        <tr style="width: 100%;"><td style="width: 40%"><p><label for = "height">Wprowadź wysokość walca: </label></p></td><td><input type = "range" class="form-control" id = "height" min="1" max="100"></td></tr>
+                    </table>
+                         
+                    <button id = "count_button" class="btn btn-primary btn-lg">Policz</button>
+                    <br><br>
+                    <p id = "radius_value"></p>
+                    <p id = "height_value"></p>
+                    <p id = "volume"></p>
+                    <p id = "total_surface"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="text-center panel-footer">© 2018 Copyright Łukasz Chojnacki</div>
+          
+    </footer>
+
+</body>

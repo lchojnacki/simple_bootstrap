@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+    <title>AboutPython | Historia języka</title>
+    <link rel=icon href=./img/favicon.svg sizes="any" type="image/svg+xml">
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <style>
+        body {
+            position: relative;
+        }
+
+        .container {
+            padding-top: 80px;
+            padding-bottom: 100px;
+        }
+
+        .panel-footer {
+            width: 100%;
+            position:absolute;
+            bottom: 0;
+        }
+		
+        .timeline {
+            list-style: none;
+            padding: 20px 0 20px;
+            position: relative;
+        }
+
+        .timeline:before {
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 3px;
+            background-color: #eeeeee;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline > li {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline > li:before,
+        .timeline > li:after {
+            content: " ";
+            display: table;
+        }
+
+        .timeline > li:after {
+            clear: both;
+        }
+
+        .timeline > li:before,
+        .timeline > li:after {
+            content: " ";
+            display: table;
+        }
+
+        .timeline > li:after {
+            clear: both;
+        }
+
+        .timeline > li > .timeline-panel {
+            width: 46%;
+            float: left;
+            border: 1px solid #d4d4d4;
+            border-radius: 2px;
+            padding: 20px;
+            position: relative;
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+        }
+
+        .timeline > li > .timeline-panel:before {
+            position: absolute;
+            top: 26px;
+            right: -15px;
+            display: inline-block;
+            border-top: 15px solid transparent;
+            border-left: 15px solid #ccc;
+            border-right: 0 solid #ccc;
+            border-bottom: 15px solid transparent;
+            content: " ";
+        }
+
+            .timeline > li > .timeline-panel:after {
+                position: absolute;
+                top: 27px;
+                right: -14px;
+                display: inline-block;
+                border-top: 14px solid transparent;
+                border-left: 14px solid #fff;
+                border-right: 0 solid #fff;
+                border-bottom: 14px solid transparent;
+                content: " ";
+            }
+
+        .timeline > li > .timeline-badge {
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1.4em;
+            text-align: center;
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            margin-left: -25px;
+            background-color: #999999;
+            z-index: 100;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+        }
+
+            .timeline > li.timeline-inverted > .timeline-panel:before {
+                border-left-width: 0;
+                border-right-width: 15px;
+                left: -15px;
+                right: auto;
+            }
+
+            .timeline > li.timeline-inverted > .timeline-panel:after {
+                border-left-width: 0;
+                border-right-width: 14px;
+                left: -14px;
+                right: auto;
+            }
+
+.timeline-badge.primary {
+    background-color: #2e6da4 !important;
+}
+
+.timeline-badge.success {
+    background-color: #3f903f !important;
+}
+
+.timeline-badge.warning {
+    background-color: #f0ad4e !important;
+}
+
+.timeline-badge.danger {
+    background-color: #d9534f !important;
+}
+
+.timeline-badge.info {
+    background-color: #5bc0de !important;
+}
+
+.timeline-title {
+    margin-top: 0;
+    color: inherit;
+}
+
+.timeline-body > p,
+.timeline-body > ul {
+    margin-bottom: 0;
+}
+
+    .timeline-body > p + p {
+        margin-top: 5px;
+    }
+
+@media (max-width: 767px) {
+    ul.timeline:before {
+        left: 40px;
+    }
+
+    ul.timeline > li > .timeline-panel {
+        width: calc(100% - 90px);
+        width: -moz-calc(100% - 90px);
+        width: -webkit-calc(100% - 90px);
+    }
+
+    ul.timeline > li > .timeline-badge {
+        left: 15px;
+        margin-left: 0;
+        top: 16px;
+    }
+
+    ul.timeline > li > .timeline-panel {
+        float: right;
+    }
+
+        ul.timeline > li > .timeline-panel:before {
+            border-left-width: 0;
+            border-right-width: 15px;
+            left: -15px;
+            right: auto;
+        }
+
+        ul.timeline > li > .timeline-panel:after {
+            border-left-width: 0;
+            border-right-width: 14px;
+            left: -14px;
+            right: auto;
+        }
+}
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="./">AboutPython</a>
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Dlaczego Python?</a></li>
+                        <li class="active"><a href="history.html">Historia języka</a></li>
+                        <li><a href="projects.html">Przykładowe skrypty</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Więcej<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="jquery.html">JQuery</a></li>
+                                <li><a href="ajax.html">AJAX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--
+        1. Dlaczego python? (porównanie python vs C/C++)
+        2. Historia języka
+        3. Przykładowe skrypty
+    -->
+
+    <div class="container">
+        <div class="row">
+            <ol class="breadcrumb">
+            <li><a href="./">Home</a></li>
+            <li class="active">Historia języka</li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-badge"><i class="glyphicon glyphicon-log-in"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Pierwsze kroki</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1991</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Guido van Rossum w Centrum Matematyki i Informatyki w Amsterdamie publikuje wersję 0.9.0 języka Python. Jego nazwa pochodzi nie od zwierzęcia, jak jest to powszechnie uważane, lecz od "Latającego cyrku Monty Pythona", którego van Rossum był fanem.</p>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                        <img class="media-object" src="./img/Guido_van_Rossum_64.png" alt="Guido van Rossum, 2006, From Wikimedia Commons, the free media repository">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Guido van Rossum</h4>
+                                        2006, From Wikimedia Commons, the free media repository
+                                    </div>
+                                </div>
+                                <p></p>
+                                <p>Na tym etapie rozwoju języka dostępne były klasy wraz z dziedziczeniem, obsługa wyjątków, funkcje i podstawowe typy danych, takie jak <code>list</code>, <code>dict</code>, <code>str</code> i inne.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Wersja 1</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1994</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>W styczniu 1994 roku opublikowano wersję 1.0 języka. Głównymi nowościami wprowadzonymi w tym wydaniu były narzędzia takie jak <code>lambda</code>, <code>map</code>, <code>filter</code> czy <code>reduce</code>.</p>
+                                <p>Ostatnią wersją wydaną przez Centrum Matematyki i Informatyki w Amsterdamie był Python 1.2. Od 1995 roku Van Rossum kontynuował pracę nad Pythonem w Corporation for National Research Initiatives (CNRI) w Reston w Wirginii, gdzie wydał kilka wersji Pythona, do 1.6 włącznie.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-badge danger"><i class="glyphicon glyphicon-console"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Wersja 2</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2000</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>W 2000 roku van Rossum i zespół pracujący nad rozwojem jądra Pythona przenieśli się do BeOpen.com by założyć zespół BeOpen PythonLabs. Pierwszą i jedyną wersją wydaną przez BeOpen.com był Python 2.0.</p>
+                                <p>W tej wersji do języka został wprowadzony mechanizm garbage collection, odpowiedzialny za automatyczne zwalnianie nieużywanej pamięci.</p>
+                                <p>Od wersji 2.1 (2001) język jest rozwijany jako projekt Open Source przez niedochodową organizację Python Software Foundation (PSF), wzorowaną na Apache Software Foundation.</p>
+                                <p>Python 2.2 uszeregował typy danych i klasy w jednej, zgodnej hierarchii. Wprowadził również mechanizm generatorów, pozwalający oszczędzać pamięć.</p>
+                                <p>Wprowadzony we wrześniu 2006 Python 2.5 dołączył do języka instrukcję <code>with</code>.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge success"><i class="glyphicon glyphicon-resize-full"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Rozwidlenie dróg</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2008</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Od 2008 istnieją dwie gałęzie: Python 2 i Python 3 (zerwanie kompatybilności wstecz). Ostatnią wersją Pythona 2.x (stan na 21.06.2018) jest Python 2.7.13. Python 2.8 nie będzie nigdy wydany, a wsparcie dla wersji 2.7 będzie utrzymywane do 2020 roku. Z tego powodu zalecane jest przejście na Pythona w wersji 3.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-badge info"><i class="glyphicon glyphicon-ok"></i></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Python 3</h4>
+                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2008</small></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>W grudniu 2008 został zaprezentowany Python 3 (nazywany również "Python 3000" lub "Py3K"). Wprowadził on duże zmiany, które uniemożliwiły zachowanie kompatybilności z Pythonem 2.</p>
+                                <p>Najważniejsze nowości wprowadzone w Python 3:</p>
+                                <ul>
+                                    <li>polecenie <code>print</code> zastąpiono wbudowaną funkcją <code>print()</code></li>
+                                    <li>usunięcie funkcji <code>input()</code> z Pythona 2 i przemianowanie funkcji <code>raw_input()</code> pobierającą string na <code>input()</code></li>
+                                    <li>wprowadzenie Unicode jako standardowego kodowania stringów</li>
+                                    <li>zmiana działania znaku <code>/</code>: w Pythonie 2 <code>5 / 2</code> zwracało <code>2</code>, w Pythonie 3 <code>5 / 2</code> zwraca <code>2.5</code>; wprowadzono operator dzielenia całkowitego (<code>5 // 2 = 2</code>)</li>
+                                </ul>
+                                <p>Ostatnią wydaną wersją jest Python 3.6.1 (21.03.2017).</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="text-center panel-footer">© 2018 Copyright Łukasz Chojnacki</div>
+          
+    </footer>
+
+</body>

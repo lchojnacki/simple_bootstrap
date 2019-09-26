@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+    <title>AboutPython | Dlaczego Python?</title>
+    <link rel=icon href=./img/favicon.svg sizes="any" type="image/svg+xml">
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+    
+    <style>
+        body {
+            position: relative;
+        }
+        .container {
+            padding-top: 80px;
+            padding-bottom: 100px;
+        }
+        .tab {
+            white-space: pre;
+        }
+        .progress-label {
+            float: left;
+            margin-right: 1em;
+        }
+        .panel-footer {
+            width: 100%;
+            position:absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="./">AboutPython</a>
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Dlaczego Python?</a></li>
+                        <li><a href="history.html">Historia języka</a></li>
+                        <li><a href="projects.html">Przykładowe skrypty</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Więcej<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="jquery.html">JQuery</a></li>
+                                <li><a href="ajax.html">AJAX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--
+        1. Dlaczego python? (porównanie python vs C/C++)
+        2. Historia języka
+        3. Przykładowe skrypty
+    -->
+
+    <div class="container">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li class="active">Home</li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" style="max-height: 450px; overflow: hidden;">
+                        <div class="item active" style="max-height: 450px; overflow: hidden;">
+                            <img src="./img/slide1.png" alt="Python logo" style="width:100%;">
+                        </div>
+    
+                        <div class="item" style="max-height: 450px; overflow: hidden;">
+                            <img src="./img/slide2.jpg" alt="Python code" style="width:100%;">
+                        </div>
+    
+                        <div class="item" style="max-height: 450px; overflow: hidden;">
+                            <img src="./img/slide3.jpg" alt="Python programmer" style="width:100%;">
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Czym jest Python?</h1>
+                <p>Python to interpretowany, interaktywny, skryptowy język programowania. posiada w pełni dynamiczny system typów i automatyczne zarządzanie pamięcią, jest zatem podobny do takich języków, jak Tcl, Perl, Scheme czy Ruby. Python realizuje jednocześnie kilka paradygmatów. Podobnie do C++ nie wymusza jednego stylu programowania, pozwalając na stosowanie różnych. Python posiada:</p> 
+                <ul>
+                    <li>Paradygmat programowanie obiektowego</li>
+                    <li>Paradygmat programowanie strukturalnego</li>
+                    <li>Paradygmat programowanie funkcyjnego</li>
+                </ul>
+                <p>Typy sprawdzane są dynamicznie, a do zarządzania pamięcią stosuje się architekturę garbage collection podobnie jak w języku Ruby czy też D.</p>
+                <h1>Dlaczego programowanie w Pythonie jest takie fajne?</h1>
+                <ul>
+                    <li>Dynamiczne typy danych</li>
+                    <li>Niewielka liczba słów kluczowych i operatorów</li>
+                    <li>Pełna obiektowość języka</li>
+                    <li>Czytelny i schludny kod programu poprzez wymuszanie wcięć</li>
+                    <li>Mniejsza objętość kodu, niż w innych językach, np. C++</li>
+                </ul>
+                <h1>Mniejsza objętość kodu? Ale jak to!?</h1>
+                <p>Poniżej porównanie sztandarowego pierwszego kodu każdego programisty w różnych językach programowania:</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <span class="badge badge-primary badge-pill">Python</span>
+                        <samp>
+                            print("Hello World!")
+                        </samp>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge badge-primary badge-pill">C++</span>
+                        <samp>
+                            #include &lt;iostream&gt;<br>
+                            using namespace std;<br>
+                            <br>
+                            int main(void) {<br>
+                            <span class="tab">    </span>cout &lt;&lt; "Hello World!" &lt;&lt; endl;<br>
+                            <span class="tab">    </span>return 0;<br>
+                            }
+                        </samp>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge badge-primary badge-pill">Java</span>
+                        <samp>
+                            public class Hello {<br>
+                            <span class="tab">    </span>public static void main(String[] args) {<br>
+                            <span class="tab">        </span>System.out.println("Hello World!");<br>
+                            <span class="tab">    </span>}<br>
+                            }
+                        </samp>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Tak! Chcę pisać w Pythonie!</h1>
+                <p class="progress-label col-md-2">
+                    Łatwość pisania kodu
+                </p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                        <span class="sr-only">75/100</span>
+                    </div>
+                </div>
+                <p class="progress-label col-md-2">
+                    Łatwość czytania kodu
+                </p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                        <span class="sr-only">95/100</span>
+                    </div>
+                </div>
+                <p class="progress-label col-md-2">
+                    Satysfakcja z pisania
+                </p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                        <span class="sr-only">100/100</span>
+                    </div>
+                </div>
+                <p class="progress-label col-md-2">
+                    Ilość nadmiarowych linii kodu
+                </p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+                        <span class="sr-only">5/100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="text-center panel-footer">© 2018 Copyright Łukasz Chojnacki</div>
+      
+    </footer>
+</body>
